@@ -9,6 +9,15 @@ Request: Hãy phân tích phản hồi thô của khách hàng, sau đó trích 
 - score: Điểm số hài lòng ước tính từ 1 đến 5.
 - summary: Tóm tắt nội dung chính ngắn gọn dưới 15 từ, lọc bỏ hoàn toàn các từ cảm thán thừa thãi.
 
+Explanation: Dữ liệu này sẽ được truyền trực tiếp vào cơ sở dữ liệu của Frontend Dashboard, do đó yêu cầu định dạng JSON phải hợp lệ tuyệt đối, không chứa văn bản thừa để tránh lỗi hệ thống khi tự động hóa.
+
+Action: Trích xuất và phân loại các thông tin sau: 
+- sentiment: Cảm xúc chính của khách hàng (chọn 1 trong 3 giá trị: "Positive", "Negative", hoặc "Neutral"). 
+-  topics: Danh sách các chủ đề liên quan (chọn từ các tag: "Product", "Delivery", "Service", "System"). Trường hợp phản hồi đề cập đến nhiều vấn đề (ví dụ: khen giao hàng nhanh nhưng chê sản phẩm lỗi), bắt buộc phải gắn đồng thời tất cả các tag tương ứng. 
+- score: Điểm số hài lòng ước tính của khách hàng trên thang điểm từ 1 đến 5. 
+- summary: Tóm tắt nội dung chính ngắn gọn dưới 15 từ, lọc bỏ hoàn toàn các từ cảm thán thừa thãi. 
+
+Tone & Style: Khách quan, chuẩn xác, chuyên nghiệp, chỉ tập trung vào dữ liệu phân tích kỹ thuật.
 Examples (Few-shot mẫu tham khảo):
 - Ví dụ 1 (Tích cực):
   Input: "App mượt mà, nhân viên hỗ trợ nhiệt tình và giao hàng cực kỳ nhanh chóng. Rất hài lòng!"
